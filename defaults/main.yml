@@ -1,0 +1,5 @@
+---
+erlang_relx_git: https://github.com/erlware/relx.git
+erlang_relx_src_path: ~/src/relx
+erlang_relx_version: v0.6.0
+erlang_relx_bin_path: ~/bin/relx

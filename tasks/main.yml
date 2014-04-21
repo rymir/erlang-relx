@@ -1,0 +1,12 @@
+---
+- name: clone erlang relx
+  git: repo={{ erlang_relx_git }} dest={{ erlang_relx_src_path }} version={{ erlang_relx_version }}
+
+- name: bootstrap erlang relx
+  command: "chdir={{ erlang_relx_src_path }} make creates={{ erlang_relx_src_path }}/relx"
+
+- name: copy erlang relx executable
+  command: "cp {{ erlang_relx_src_path }}/relx {{ erlang_relx_bin_path }} creates={{ erlang_relx_bin_path }}"
+
+- name: ensure relx mode
+  file: "path={{ erlang_relx_bin_path }} mode=0755"
